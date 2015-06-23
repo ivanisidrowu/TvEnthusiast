@@ -1,22 +1,20 @@
 package tw.invictus.tvethusiast.activity;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.os.Bundle;
-import android.util.Log;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
 
-import tw.invictus.tvethusiast.fragment.NavigationDrawerFragment;
 import tw.invictus.tvethusiast.R;
-import tw.invictus.tvethusiast.util.PropertiesUtil;
+import tw.invictus.tvethusiast.fragment.NavigationDrawerFragment;
 
 
 public class MainActivity extends ActionBarActivity
@@ -50,7 +48,6 @@ public class MainActivity extends ActionBarActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-        Log.d("ivan", "prop: " + PropertiesUtil.getKeyEndpoint());
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))

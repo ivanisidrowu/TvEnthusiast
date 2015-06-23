@@ -1,8 +1,11 @@
 package tw.invictus.tvethusiast.util;
 
-import java.io.IOException;
+import android.content.Context;
+
 import java.io.InputStream;
 import java.util.Properties;
+
+import tw.invictus.tvethusiast.R;
 
 /**
  * Created by ivan on 6/21/15.
@@ -14,16 +17,17 @@ public class PropertiesUtil {
     private static final String PROPS_PATH = "app.properties";
     private static PropertiesUtil instance = null;
     private Properties properties = null;
+    private Context context = null;
 
-    private PropertiesUtil(){
-
+    private PropertiesUtil(Context context){
+        this.context = context;
     }
 
-    public static PropertiesUtil getInstance(){
+    public static PropertiesUtil getInstance(Context context){
         if(instance == null){
             synchronized (PropertiesUtil.class){
                 if(instance == null){
-                    instance = new PropertiesUtil();
+                    instance = new PropertiesUtil(context);
                 }
             }
         }
@@ -33,8 +37,8 @@ public class PropertiesUtil {
     private Properties getProperties(){
         if(properties == null){
             properties = new Properties();
-            InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(PROPS_PATH);
             try {
+                InputStream inputStream = context.getResources().openRawResource(R.raw.app);
                 properties.load(inputStream);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -43,11 +47,11 @@ public class PropertiesUtil {
         return properties;
     }
 
-    public static String getApiKey(){
-        return getInstance().getProperties().getProperty(KEY_API);
+    public String getApiKey(){
+        return getProperties().getProperty(KEY_API);
     }
 
-    public static String getKeyEndpoint(){
-        return getInstance().getProperties().getProperty(KEY_ENDPOINT);
+    public String getKeyEndpoint(){
+        return getProperties().getProperty(KEY_ENDPOINT);
     }
 }
