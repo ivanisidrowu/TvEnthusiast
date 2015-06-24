@@ -5,21 +5,4 @@ package tw.invictus.tvethusiast.service;
  */
 public class TvdbService {
 
-    private static TvdbService instance = null;
-
-    private TvdbService(){
-
-    }
-
-    public static TvdbService getInstance() {
-        if (instance == null) {
-            synchronized (TvdbService.class) {
-                if (instance == null) {
-                    instance = new TvdbService();
-                }
-            }
-        }
-        return instance;
-    }
-
 }
