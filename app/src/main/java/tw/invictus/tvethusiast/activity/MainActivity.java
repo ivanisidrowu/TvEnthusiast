@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 
 import tw.invictus.tvethusiast.R;
 import tw.invictus.tvethusiast.fragment.NavigationDrawerFragment;
+import tw.invictus.tvethusiast.util.PropertiesUtil;
 
 
 public class MainActivity extends ActionBarActivity
@@ -43,6 +45,8 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        Log.d("ivan", PropertiesUtil.getInstance(this.getApplicationContext()).getKeyEndpoint());
     }
 
     @Override

@@ -46,12 +46,11 @@ public class PropertiesUtil {
         }
         return properties;
     }
-
-    public static String getApiKey(){
-        return getInstance().getProperties().getProperty(KEY_API);
+    public String getApiKey(){
+        return getProperties().getProperty(KEY_API);
     }
 
-    public static String getKeyEndpoint(){
-        return getInstance().getProperties().getProperty(KEY_ENDPOINT);
+    public String getKeyEndpoint(){
+        return instance.getProperties().getProperty(KEY_ENDPOINT);
     }
 }
