@@ -1,13 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <resources>
     <string name="app_name">TvEthusiast</string>
 
-    <string name="drawer_my_tv_series">My Series</string>
-    <string name="drawer_discover">Discover</string>
-    <string name="drawer_setting">Setting</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_add_series">Add Series</string>
+  <string name="cheese_ipsum">Jarlsberg lancashire edam. Dolcelatte hard cheese brie st. agur blue
+    cheese caerphilly bavarian bergkase cheese and biscuits mascarpone. Cheeseburger swiss bavarian
+    bergkase cream cheese fromage frais cheesy feet port-salut airedale. St. agur blue cheese rubber
+    cheese caerphilly cheddar cheesecake cream cheese manchego lancashire. Roquefort squirty cheese
+    the big cheese.</string>
+  <string name="checkin">Checkin</string>
+  <string name="menu_settings">Settings</string>
 
 </resources>
