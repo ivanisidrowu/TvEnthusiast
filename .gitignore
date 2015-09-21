@@ -5,4 +5,34 @@
 .DS_Store
 /build
 /captures
+
+# Properties
 *.properties
+
+# Android generated
+bin
+gen
+lint.xml
+lint
+
+# IDE
+.idea
+*.iml
+*.ipr
+*.iws
+classes
+gen-external-apklibs
+
+# Gradle
+gradlew
+gradlew.bat
+gradle/
+build/
+
+#Other
+Thumbs.db
+tmp
+*.tgz
+*.lock
+*.lck
+com_crashlytics_export_strings.xml
