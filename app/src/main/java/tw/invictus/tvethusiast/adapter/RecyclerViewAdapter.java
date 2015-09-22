@@ -14,6 +14,7 @@ import java.util.List;
 
 import tw.invictus.tvethusiast.R;
 import tw.invictus.tvethusiast.activity.DetailActivity;
+import tw.invictus.tvethusiast.model.TvShow;
 
 /**
  * Created by ivan on 9/20/15.
@@ -21,7 +22,7 @@ import tw.invictus.tvethusiast.activity.DetailActivity;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private final TypedValue mTypedValue = new TypedValue();
     private int mBackground;
-    private List<String> mValues;
+    private List<TvShow> mValues;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public String mBoundString;
@@ -44,10 +45,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public String getValueAt(int position) {
-        return mValues.get(position);
+        return mValues.get(position).getName();
     }
 
-    public RecyclerViewAdapter(Context context, List<String> items) {
+    public RecyclerViewAdapter(Context context, List<TvShow> items) {
         context.getTheme().resolveAttribute(R.attr.selectableItemBackground, mTypedValue, true);
         mBackground = mTypedValue.resourceId;
         mValues = items;
@@ -63,8 +64,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.mBoundString = mValues.get(position);
-        holder.mTextView.setText(mValues.get(position));
+        holder.mBoundString = mValues.get(position).getName();
+        holder.mTextView.setText(mValues.get(position).getName());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override

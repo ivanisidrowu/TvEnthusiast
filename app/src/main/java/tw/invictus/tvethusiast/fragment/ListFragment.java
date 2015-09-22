@@ -21,15 +21,28 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import retrofit.Call;
+import retrofit.Callback;
+import retrofit.GsonConverterFactory;
+import retrofit.Response;
+import retrofit.Retrofit;
 import tw.invictus.tvethusiast.R;
+import tw.invictus.tvethusiast.adapter.RecyclerViewAdapter;
+import tw.invictus.tvethusiast.api.TmdbService;
+import tw.invictus.tvethusiast.model.ConfigurationResponse;
+import tw.invictus.tvethusiast.model.DiscoverTvShowResponse;
+import tw.invictus.tvethusiast.model.TvShow;
+import tw.invictus.tvethusiast.util.PropertyCofig;
 
 public class ListFragment extends Fragment {
 
@@ -42,10 +55,9 @@ public class ListFragment extends Fragment {
         return rv;
     }
 
-    private void setupRecyclerView(RecyclerView recyclerView) {
+    private void setupRecyclerView(final RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-//        recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
-//                getRandomSublist(Cheeses.sCheeseStrings, 30)));
+        getTvSeries(recyclerView);
     }
 
     private List<String> getRandomSublist(String[] array, int amount) {
@@ -55,5 +67,30 @@ public class ListFragment extends Fragment {
             list.add(array[random.nextInt(array.length)]);
         }
         return list;
+    }
+
+    private void getTvSeries(final RecyclerView recyclerView){
+        try {
+            PropertyCofig config = new PropertyCofig(getActivity());
+            String url = config.getProperty("api.endpoint");
+            String apiKey = config.getProperty("api.key");
+            Retrofit retrofit = new Retrofit.Builder().baseUrl(url).addConverterFactory(GsonConverterFactory.create()).build();
+            TmdbService service = retrofit.create(TmdbService.class);
+            service.discoverTvShows(apiKey, "popularity.desc").enqueue(new Callback<DiscoverTvShowResponse>() {
+                @Override
+                public void onResponse(Response<DiscoverTvShowResponse> response) {
+                    List<TvShow> tvShows = response.body().getTvShows();
+                    recyclerView.setAdapter(new RecyclerViewAdapter(getActivity(), tvShows));
+                }
+
+                @Override
+                public void onFailure(Throwable t) {
+
+                }
+            });
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
