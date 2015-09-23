@@ -25,33 +25,34 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import tw.invictus.tvethusiast.R;
 
 public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_NAME = "cheese_name";
+    @Bind(R.id.toolbar) Toolbar toolbar;
+    @Bind(R.id.collapsing_toolbar) CollapsingToolbarLayout collapsingToolbar;
+    @Bind(R.id.backdrop) ImageView imageView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-
+        ButterKnife.bind(this);
         Intent intent = getIntent();
         final String cheeseName = intent.getStringExtra(EXTRA_NAME);
 
-        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        CollapsingToolbarLayout collapsingToolbar =
-                (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         collapsingToolbar.setTitle(cheeseName);
 
         loadBackdrop();
     }
 
     private void loadBackdrop() {
-        final ImageView imageView = (ImageView) findViewById(R.id.backdrop);
 //        Glide.with(this).load(Cheeses.getRandomCheeseDrawable()).centerCrop().into(imageView);
     }
 

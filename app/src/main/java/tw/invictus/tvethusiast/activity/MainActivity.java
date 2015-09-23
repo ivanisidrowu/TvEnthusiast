@@ -14,11 +14,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.TableLayout;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import retrofit.Call;
 import retrofit.Callback;
 import retrofit.GsonConverterFactory;
@@ -32,57 +36,35 @@ import tw.invictus.tvethusiast.util.PropertyCofig;
 
 public class MainActivity extends AppCompatActivity {
 
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
+    @Bind(R.id.viewpager)
+    ViewPager viewPager;
+    @Bind(R.id.fab)
+    FloatingActionButton floatingActionButton;
+    @Bind(R.id.tabs)
+    TabLayout tabLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
         setSupportActionBar(toolbar);
-
         final ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(false);
-
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         if (viewPager != null) {
             setupViewPager(viewPager);
         }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-//        try {
-//            PropertyCofig config = new PropertyCofig(this);
-//            String url = config.getProperty("api.endpoint");
-//            String apiKey = config.getProperty("api.key");
-//            Retrofit retrofit = new Retrofit.Builder().baseUrl(url).addConverterFactory(GsonConverterFactory.create()).build();
-//            TmdbService service = retrofit.create(TmdbService.class);
-//            Call<ConfigurationResponse> call = service.getConfiguration(apiKey);
-//            call.enqueue(new Callback<ConfigurationResponse>() {
-//                @Override
-//                public void onResponse(Response<ConfigurationResponse> response) {
-//                    Log.d("ivan", response.body().getChangeKeys().get(0));
-//                }
-//
-//                @Override
-//                public void onFailure(Throwable t) {
-//
-//                }
-//            });
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+    }
 
+    @OnClick(R.id.fab)
+    public void onClick(View view) {
+        Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
     }
 
     private void setupViewPager(ViewPager viewPager) {

@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import tw.invictus.tvethusiast.R;
 import tw.invictus.tvethusiast.activity.DetailActivity;
 import tw.invictus.tvethusiast.model.TvShow;
@@ -28,14 +30,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public String mBoundString;
 
         public final View mView;
-        public final ImageView mImageView;
-        public final TextView mTextView;
+        @Bind(R.id.avatar) ImageView mImageView;
+        @Bind(android.R.id.text1) TextView mTextView;
 
         public ViewHolder(View view) {
             super(view);
+            ButterKnife.bind(this, view);
             mView = view;
-            mImageView = (ImageView) view.findViewById(R.id.avatar);
-            mTextView = (TextView) view.findViewById(android.R.id.text1);
         }
 
         @Override
