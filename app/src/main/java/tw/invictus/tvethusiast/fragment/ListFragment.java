@@ -19,19 +19,15 @@ package tw.invictus.tvethusiast.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-import retrofit.Call;
 import retrofit.Callback;
 import retrofit.GsonConverterFactory;
 import retrofit.Response;
@@ -39,10 +35,9 @@ import retrofit.Retrofit;
 import tw.invictus.tvethusiast.R;
 import tw.invictus.tvethusiast.adapter.RecyclerViewAdapter;
 import tw.invictus.tvethusiast.api.TmdbService;
-import tw.invictus.tvethusiast.model.ConfigurationResponse;
 import tw.invictus.tvethusiast.model.DiscoverTvShowResponse;
 import tw.invictus.tvethusiast.model.TvShow;
-import tw.invictus.tvethusiast.util.PropertyCofig;
+import tw.invictus.tvethusiast.util.PropertyConfig;
 
 public class ListFragment extends Fragment {
 
@@ -56,22 +51,13 @@ public class ListFragment extends Fragment {
     }
 
     private void setupRecyclerView(final RecyclerView recyclerView) {
-        recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
+        recyclerView.setLayoutManager(new GridLayoutManager(recyclerView.getContext(), 2));
         getTvSeries(recyclerView);
-    }
-
-    private List<String> getRandomSublist(String[] array, int amount) {
-        ArrayList<String> list = new ArrayList<>(amount);
-        Random random = new Random();
-        while (list.size() < amount) {
-            list.add(array[random.nextInt(array.length)]);
-        }
-        return list;
     }
 
     private void getTvSeries(final RecyclerView recyclerView){
         try {
-            PropertyCofig config = new PropertyCofig(getActivity());
+            PropertyConfig config = new PropertyConfig(getActivity());
             String url = config.getProperty("api.endpoint");
             String apiKey = config.getProperty("api.key");
             Retrofit retrofit = new Retrofit.Builder().baseUrl(url).addConverterFactory(GsonConverterFactory.create()).build();

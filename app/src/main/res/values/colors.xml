@@ -2,4 +2,6 @@
 
 <resources>
     <color name="window_background">#FFF5F5F5</color>
+    <color name="card_text_color">#ffffff</color>
+    <color name="card_text_background">#88000000</color>
 </resources>

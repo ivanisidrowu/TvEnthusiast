@@ -73,7 +73,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/cheese_ipsum" />
+                        android:text="1" />
 
                 </LinearLayout>
 
@@ -100,7 +100,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/cheese_ipsum" />
+                        android:text="2" />
 
                 </LinearLayout>
 
@@ -127,7 +127,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/cheese_ipsum" />
+                        android:text="3" />
 
                 </LinearLayout>
 
