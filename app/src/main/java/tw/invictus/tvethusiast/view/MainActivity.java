@@ -1,59 +1,37 @@
 
-package tw.invictus.tvethusiast.activity;
+package tw.invictus.tvethusiast.view;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import tw.invictus.tvethusiast.R;
-import tw.invictus.tvethusiast.fragment.ListFragment;
+import tw.invictus.tvethusiast.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Bind(R.id.toolbar)
-    Toolbar toolbar;
-    @Bind(R.id.viewpager)
-    ViewPager viewPager;
-    @Bind(R.id.fab)
-    FloatingActionButton floatingActionButton;
-    @Bind(R.id.tabs)
-    TabLayout tabLayout;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-        setSupportActionBar(toolbar);
-        final ActionBar ab = getSupportActionBar();
-        ab.setDisplayHomeAsUpEnabled(false);
-        if (viewPager != null) {
-            setupViewPager(viewPager);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        setSupportActionBar(binding.toolbar);
+        final ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(false);
+        if (binding.viewpager != null) {
+            setupViewPager(binding.viewpager);
         }
+        binding.tabs.setupWithViewPager(binding.viewpager);
 
-        tabLayout.setupWithViewPager(viewPager);
-
-    }
-
-    @OnClick(R.id.fab)
-    public void onClick(View view) {
-        Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
     }
 
     private void setupViewPager(ViewPager viewPager) {

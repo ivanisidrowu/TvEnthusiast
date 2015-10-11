@@ -1,4 +1,4 @@
-package tw.invictus.tvethusiast.util;
+package tw.invictus.tvethusiast.view.util;
 
 import android.content.Context;
 

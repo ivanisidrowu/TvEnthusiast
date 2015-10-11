@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by ivan on 9/21/15.
  */
-public class ConfigurationResponse {
+public class Configuration {
     @SerializedName("images")
     @Expose
     private ImageParams images;

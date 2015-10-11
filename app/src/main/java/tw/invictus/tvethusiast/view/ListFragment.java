@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package tw.invictus.tvethusiast.fragment;
+package tw.invictus.tvethusiast.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -33,11 +33,11 @@ import retrofit.GsonConverterFactory;
 import retrofit.Response;
 import retrofit.Retrofit;
 import tw.invictus.tvethusiast.R;
-import tw.invictus.tvethusiast.adapter.RecyclerViewAdapter;
-import tw.invictus.tvethusiast.api.TmdbService;
+import tw.invictus.tvethusiast.view.adapter.RecyclerViewAdapter;
+import tw.invictus.tvethusiast.model.api.TmdbService;
 import tw.invictus.tvethusiast.model.DiscoverTvShowResponse;
 import tw.invictus.tvethusiast.model.TvShow;
-import tw.invictus.tvethusiast.util.PropertyConfig;
+import tw.invictus.tvethusiast.view.util.PropertyConfig;
 
 public class ListFragment extends Fragment {
 

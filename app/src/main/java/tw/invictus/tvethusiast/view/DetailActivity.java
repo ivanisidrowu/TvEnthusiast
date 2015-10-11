@@ -14,38 +14,29 @@
  * limitations under the License.
  */
 
-package tw.invictus.tvethusiast.activity;
+package tw.invictus.tvethusiast.view;
 
-import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
-
-import butterknife.Bind;
-import butterknife.ButterKnife;
 import de.greenrobot.event.EventBus;
 import tw.invictus.tvethusiast.R;
-import tw.invictus.tvethusiast.event.CardClickEvent;
+import tw.invictus.tvethusiast.databinding.ActivityDetailBinding;
 import tw.invictus.tvethusiast.model.TvShow;
-import tw.invictus.tvethusiast.util.PropertyConfig;
+import tw.invictus.tvethusiast.view.event.CardClickEvent;
+import tw.invictus.tvethusiast.viewmodel.DetailViewModel;
 
 public class DetailActivity extends AppCompatActivity {
 
-    @Bind(R.id.toolbar) Toolbar toolbar;
-    @Bind(R.id.collapsing_toolbar) CollapsingToolbarLayout collapsingToolbar;
-    @Bind(R.id.backdrop) ImageView imageView;
+    private ActivityDetailBinding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
-        ButterKnife.bind(this);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_detail);
         EventBus.getDefault().registerSticky(this);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -59,10 +50,9 @@ public class DetailActivity extends AppCompatActivity {
     @SuppressWarnings("unused")
     public void onEvent(CardClickEvent event){
         TvShow show = event.getTvShow();
-        String backdropPath = PropertyConfig.IMG_BASE + show.getBackdropPath();
-
-        collapsingToolbar.setTitle(show.getName());
-        Picasso.with(this).load(backdropPath).fit().centerCrop().into(imageView);
+        DetailViewModel viewModel = new DetailViewModel(this, show);
+        binding.setViewModel(viewModel);
+        binding.collapsingToolbar.setTitle(show.getName());
     }
 
 }

@@ -37,18 +37,12 @@ public class TvShow {
     @SerializedName("poster_path")
     @Expose
     private String posterPath;
-    @SerializedName("popularity")
-    @Expose
-    private Double popularity;
     @SerializedName("name")
     @Expose
     private String name;
     @SerializedName("vote_average")
     @Expose
     private Double voteAverage;
-    @SerializedName("vote_count")
-    @Expose
-    private Integer voteCount;
 
     public String getBackdropPath() {
         return backdropPath;
@@ -122,14 +116,6 @@ public class TvShow {
         this.posterPath = posterPath;
     }
 
-    public Double getPopularity() {
-        return popularity;
-    }
-
-    public void setPopularity(Double popularity) {
-        this.popularity = popularity;
-    }
-
     public String getName() {
         return name;
     }
@@ -144,14 +130,6 @@ public class TvShow {
 
     public void setVoteAverage(Double voteAverage) {
         this.voteAverage = voteAverage;
-    }
-
-    public Integer getVoteCount() {
-        return voteCount;
-    }
-
-    public void setVoteCount(Integer voteCount) {
-        this.voteCount = voteCount;
     }
 
 }

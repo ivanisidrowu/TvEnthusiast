@@ -1,4 +1,4 @@
-package tw.invictus.tvethusiast.event;
+package tw.invictus.tvethusiast.view.event;
 
 import tw.invictus.tvethusiast.model.TvShow;
 
