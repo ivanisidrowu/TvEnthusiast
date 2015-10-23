@@ -52,7 +52,7 @@ public class DetailActivity extends AppCompatActivity {
         TvShow show = event.getTvShow();
         DetailViewModel viewModel = new DetailViewModel(this, show);
         binding.setViewModel(viewModel);
-        binding.collapsingToolbar.setTitle(show.getName());
+        binding.collapsingToolbar.setTitle(show.getTitle());
     }
 
 }

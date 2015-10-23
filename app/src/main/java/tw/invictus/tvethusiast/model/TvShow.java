@@ -2,47 +2,49 @@ package tw.invictus.tvethusiast.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.orm.SugarRecord;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by ivan on 9/21/15.
  */
-public class TvShow {
+public class TvShow extends SugarRecord<TvShow>{
+
     @SerializedName("backdrop_path")
-    @Expose
     private String backdropPath;
+
     @SerializedName("first_air_date")
-    @Expose
     private String firstAirDate;
-    @SerializedName("genre_ids")
-    @Expose
-    private List<Integer> genreIds = new ArrayList<Integer>();
-    @SerializedName("id")
-    @Expose
-    private Integer id;
-    @SerializedName("original_language")
-    @Expose
-    private String originalLanguage;
-    @SerializedName("original_name")
-    @Expose
-    private String originalName;
-    @SerializedName("overview")
-    @Expose
+
+    private Long serverId;
+
     private String overview;
-    @SerializedName("origin_country")
-    @Expose
-    private List<String> originCountry = new ArrayList<String>();
+
     @SerializedName("poster_path")
-    @Expose
     private String posterPath;
+
     @SerializedName("name")
-    @Expose
-    private String name;
-    @SerializedName("vote_average")
-    @Expose
-    private Double voteAverage;
+    private String title;
+
+    @SerializedName("last_air_date")
+    private String lastAirDate;
+
+    @SerializedName("number_of_episodes")
+    private Integer numberOfEpisodes;
+
+    @SerializedName("number_of_seasons")
+    private Integer numberOfSeasons;
+
+    private String status;
+
+    public TvShow(){
+
+    }
+
+    public TvShow(String title) {
+        this.title = title;
+    }
 
     public String getBackdropPath() {
         return backdropPath;
@@ -60,52 +62,12 @@ public class TvShow {
         this.firstAirDate = firstAirDate;
     }
 
-    public List<Integer> getGenreIds() {
-        return genreIds;
-    }
-
-    public void setGenreIds(List<Integer> genreIds) {
-        this.genreIds = genreIds;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getOriginalLanguage() {
-        return originalLanguage;
-    }
-
-    public void setOriginalLanguage(String originalLanguage) {
-        this.originalLanguage = originalLanguage;
-    }
-
-    public String getOriginalName() {
-        return originalName;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setOriginalName(String originalName) {
-        this.originalName = originalName;
-    }
-
     public String getOverview() {
         return overview;
     }
 
     public void setOverview(String overview) {
         this.overview = overview;
-    }
-
-    public List<String> getOriginCountry() {
-        return originCountry;
-    }
-
-    public void setOriginCountry(List<String> originCountry) {
-        this.originCountry = originCountry;
     }
 
     public String getPosterPath() {
@@ -116,20 +78,61 @@ public class TvShow {
         this.posterPath = posterPath;
     }
 
-    public String getName() {
-        return name;
+    public Long getServerId() {
+        return serverId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setServerId(Long serverId) {
+        this.serverId = serverId;
     }
 
-    public Double getVoteAverage() {
-        return voteAverage;
+    public void setServerId(){
+        this.serverId = super.getId();
+        super.setId(null);
     }
 
-    public void setVoteAverage(Double voteAverage) {
-        this.voteAverage = voteAverage;
+    public String getTitle() {
+        return title;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getLastAirDate() {
+        return lastAirDate;
+    }
+
+    public void setLastAirDate(String lastAirDate) {
+        this.lastAirDate = lastAirDate;
+    }
+
+    public Integer getNumberOfEpisodes() {
+        return numberOfEpisodes;
+    }
+
+    public void setNumberOfEpisodes(Integer numberOfEpisodes) {
+        this.numberOfEpisodes = numberOfEpisodes;
+    }
+
+    public Integer getNumberOfSeasons() {
+        return numberOfSeasons;
+    }
+
+    public void setNumberOfSeasons(Integer numberOfSeasons) {
+        this.numberOfSeasons = numberOfSeasons;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public List<Season> getSeasons(){
+        String id = Long.toString(this.getId());
+        return Season.find(Season.class, "id = ?", id);
+    }
 }

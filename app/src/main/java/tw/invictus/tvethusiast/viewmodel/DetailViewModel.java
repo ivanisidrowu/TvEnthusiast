@@ -23,7 +23,7 @@ public class DetailViewModel {
     }
 
     public String getName(){
-        return show.getName();
+        return show.getTitle();
     }
 
     public String getOverview(){

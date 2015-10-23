@@ -31,13 +31,12 @@ public class MainActivity extends AppCompatActivity {
             setupViewPager(binding.viewpager);
         }
         binding.tabs.setupWithViewPager(binding.viewpager);
-
     }
 
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
-        adapter.addFragment(new ListFragment(), "Popular");
-        adapter.addFragment(new ListFragment(), "My Series");
+        adapter.addFragment(new PopularShowsFragment(), "Popular");
+        adapter.addFragment(new MyTvShowsFragment(), "My Series");
         viewPager.setAdapter(adapter);
     }
 

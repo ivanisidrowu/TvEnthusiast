@@ -29,7 +29,7 @@ public class ListItemViewModel extends BaseObservable{
     }
 
     public String getName(){
-        return tvShow.getName();
+        return tvShow.getTitle();
     }
 
     public String getPosterUrl(){
