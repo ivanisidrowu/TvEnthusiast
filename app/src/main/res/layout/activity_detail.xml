@@ -75,7 +75,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Info"
+                            android:text="@string/overview"
                             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
                         <TextView
@@ -96,6 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
             android:clickable="true"
+            android:src="@drawable/ic_add_white_36dp"
             app:layout_anchor="@id/appbar"
             app:layout_anchorGravity="bottom|right|end" />
 

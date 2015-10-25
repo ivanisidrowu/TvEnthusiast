@@ -3,5 +3,9 @@
 <resources>
     <string name="app_name">TvEthusiast</string>
     <string name="menu_settings">Settings</string>
-
-</resources>
+    <string name="search_title">Search TV Series</string>
+    <string name="popular">Popular</string>
+    <string name="my_series">My Series</string>
+    <string name="result">Result</string>
+    <string name="overview">Overview</string>
+    </resources>

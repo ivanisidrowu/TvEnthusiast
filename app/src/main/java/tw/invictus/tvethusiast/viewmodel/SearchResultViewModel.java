@@ -18,30 +18,29 @@ import tw.invictus.tvethusiast.view.adapter.RecyclerViewAdapter;
 import tw.invictus.tvethusiast.view.util.PropertyConfig;
 
 /**
- * Created by ivan on 10/23/15.
+ * Created by ivan on 10/25/15.
  */
-public class PopularShowsViewModel {
+public class SearchResultViewModel {
 
-    public static final String TAG = PopularShowsViewModel.class.getSimpleName();
+    public static final String TAG = SearchResultViewModel.class.getSimpleName();
 
     private Context context;
     private RecyclerView recyclerView;
 
-    public PopularShowsViewModel(Context context){
+    public SearchResultViewModel(Context context) {
         this.context = context;
     }
 
-    public void setRecyclerView(RecyclerView recyclerView) {
+    public void setRecyclerView(RecyclerView recyclerView){
         this.recyclerView = recyclerView;
         recyclerView.setLayoutManager(new GridLayoutManager(recyclerView.getContext(), 2));
-        getTvSeries();
     }
 
-    private void getTvSeries(){
+    public void viewSearchResults(String query){
         try {
             PropertyConfig config = new PropertyConfig(context);
             String apiKey = config.getProperty("api.key");
-            RestfulApi.getApi(context).getPopularShows(apiKey).enqueue(new Callback<SeriesResponse>() {
+            RestfulApi.getApi(context).searchTvShows(apiKey, query).enqueue(new Callback<SeriesResponse>() {
                 @Override
                 public void onResponse(Response<SeriesResponse> response, Retrofit retrofit) {
                     List<TvShow> tvShows = response.body().getResult();
@@ -50,14 +49,11 @@ public class PopularShowsViewModel {
 
                 @Override
                 public void onFailure(Throwable t) {
-                    Log.e("ivan", "fail");
+
                 }
             });
-
-
         } catch (IOException e) {
             Log.e(TAG, e.getMessage());
         }
     }
-
 }
