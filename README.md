@@ -6,6 +6,9 @@ Track TV series! Discover awesome series!
 * Get new episode notifications
 * Save your watching progress
 
+Avaliable on Google Play Store
+https://play.google.com/store/apps/details?id=tw.invictus.tventhusiast
+
 ## Data source
 This APP uses TMDB API.
 https://www.themoviedb.org/documentation/api
@@ -17,7 +20,7 @@ Get a developer api key via...
 https://www.themoviedb.org/documentation/api
 
 ### Configure your API key
-Add API key in build.gradle file which is in "app" directory.
+Add API key to gradle.properties file
 ```
 buildConfigField STRING, "API_KEY", "\"${YOUR_APIKEY}\""
 ```
