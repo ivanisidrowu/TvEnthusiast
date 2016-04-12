@@ -20,7 +20,7 @@ Get a developer api key via...
 https://www.themoviedb.org/documentation/api
 
 ### Configure your API key
-Add API key to gradle.properties file
+Add API key in gradle.build
 ```
 buildConfigField STRING, "API_KEY", "\"${YOUR_APIKEY}\""
 ```
@@ -58,6 +58,6 @@ Retrolamda https://github.com/evant/gradle-retrolambda
 
 ## How to contribute
 
-Any contribution will be appreciated. If you want to contribute to this project, you can send pull request. :)
+Any contributions will be appreciated. If you want to contribute to this project, you can send pull request.
 
 If you discover an issue, please file it in issue section. Thanks.
