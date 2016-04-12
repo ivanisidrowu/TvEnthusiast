@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/dialog_about_view_margin"
+        android:textSize="@dimen/dialog_about_text_size"
+        android:text="@string/about"/>
+
+    <TextView
+        android:id="@+id/attribution"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dialog_about_view_margin"
+        android:textSize="@dimen/dialog_about_text_size"
+        android:text="@string/attribution"/>
+
+    <TextView
+        android:id="@+id/link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dialog_about_view_margin"
+        android:textSize="@dimen/dialog_about_text_size"
+        android:autoLink="web"
+        android:text="@string/credit_link"/>
+
+</LinearLayout>

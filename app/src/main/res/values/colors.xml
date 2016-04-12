@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <resources>
-    <color name="window_background">#FFF5F5F5</color>
-    <color name="card_text_color">#ffffff</color>
+    <color name="colorPrimary">#272727</color>
+    <color name="colorPrimaryDark">#696969</color>
+    <color name="colorAccent">#696969</color>
     <color name="card_text_background">#88000000</color>
+    <color name="window_background">#272727</color>
+    <color name="colorMask">#88000000</color>
 </resources>

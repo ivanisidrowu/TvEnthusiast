@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/window_background"
+    android:fitsSystemWindows="true"
+    tools:context=".view.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="@dimen/activity_default_elevation"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:divider="?android:attr/dividerHorizontal"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:orientation="horizontal">
+
+            <fragment
+                android:id="@+id/fragment_main"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:name="tw.invictus.tventhusiast.view.fragment.MainFragment"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                tools:layout="@layout/fragment_main" />
+
+            <FrameLayout
+                android:id="@+id/detail_container"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/search_recyclerview"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary">
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+
+
+
+</android.support.design.widget.CoordinatorLayout>
+
+

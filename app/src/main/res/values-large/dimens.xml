@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <resources>
-    <dimen name="detail_backdrop_height">256dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
-    <dimen name="list_item_avatar_size">40dp</dimen>
-
+    <dimen name="activity_detail_poster_width">200dp</dimen>
+    <dimen name="activity_detail_info_text_size">30sp</dimen>
+    <dimen name="activity_detail_subtitle_text_size">40sp</dimen>
+    <dimen name="activity_detail_text_size">20sp</dimen>
+    <dimen name="activity_detail_view_margin">10dp</dimen>
+    <dimen name="activity_detail_play_size">100dp</dimen>
+    <dimen name="overview_padding_top">40dp</dimen>
     <dimen name="recycler_padding_top">20dp</dimen>
-
-    <dimen name="card_margin">16dp</dimen>
-    <dimen name="card_height">350dp</dimen>
-    <dimen name="card_corner_radius">4dp</dimen>
-    <dimen name="card_text_padding_left">5dp</dimen>
-    <dimen name="card_text_size">30sp</dimen>
+    <dimen name="recycler_padding_bottom">20dp</dimen>
+    <dimen name="fragment_card_margin">8dp</dimen>
+    <dimen name="fragment_card_elevation">5dp</dimen>
+    <dimen name="fragment_season_list_item_margin">20dp</dimen>
+    <dimen name="fragment_season_list_item_text_size">20sp</dimen>
 </resources>

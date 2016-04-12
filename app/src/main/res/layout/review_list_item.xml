@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/person"
+            android:layout_width="@dimen/activity_detail_play_size"
+            android:layout_height="@dimen/activity_detail_play_size"
+            android:layout_margin="@dimen/activity_detail_view_margin"
+            android:src="@drawable/ic_account" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/activity_detail_view_margin"
+            android:textSize="@dimen/activity_detail_text_size" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/review_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_detail_view_margin"
+        android:textSize="@dimen/activity_detail_text_size"/>
+
+</LinearLayout>

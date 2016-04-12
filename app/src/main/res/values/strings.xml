@@ -1,11 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
-
 <resources>
-    <string name="app_name">TvEthusiast</string>
+    <string name="app_name">TvEnthusiast</string>
+    <string name="image_size_url">w185/</string>
+    <string name="backdrop_size_url">w300</string>
+    <string name="movie_detail_info">%2$s\nAverage vote: %1$s</string>
+    <string name="sort_by_poularity">Popular Series</string>
+    <string name="sort_by_rate">Top Rated</string>
+    <string name="no_network_connection">No network connection! Please connect it!</string>
+    <string name="trailers">Trailers</string>
+    <string name="reviews">Reviews</string>
+    <string name="overview">Overview</string>
+    <string name="favorites">My Series</string>
+    <string name="share">Share Trailer</string>
+    <string name="please_choose_movie">Choose a show from the list on the left!</string>
+
     <string name="menu_settings">Settings</string>
     <string name="search_title">Search TV Series</string>
     <string name="popular">Popular</string>
     <string name="my_series">My Series</string>
     <string name="result">Result</string>
-    <string name="overview">Overview</string>
-    </resources>
+    <string name="seasons">Seasons</string>
+    <string name="season">Season %1$d</string>
+    <string name="tv_show_added">The show had been added.</string>
+    <string name="tv_show_deleted">The show had been deleted.</string>
+    <string name="new_episode">Airing Today!</string>
+    <string name="episode">Episode %1$d : %2$s</string>
+    <string name="airing_msg">%1$s S%2$dE%3$d: %4$s</string>
+    <string name="images">images</string>
+    <string name="about">About</string>
+    <string name="setting">Setting</string>
+    <string name="no_translation">No translation for now.</string>
+
+    <string name="duration">%1$s (%2$s - %3$s)</string>
+    <string name="genre">Genre: %1$s</string>
+    <string name="attribution">This APP is developed by Ivan Wu.\n\nLogo is designed by Bessie Tseng. \n\nTV contents are provided by TMDB.\nThis APP uses the TMDb API but is not endorsed or certified by TMDb.</string>
+    <string name="credit_link">https://www.themoviedb.org/</string>
+    <string name="notification" translatable="false">Notification</string>
+    <string name="notify_when_airing" translatable="false">Notify me when new episode available</string>
+</resources>

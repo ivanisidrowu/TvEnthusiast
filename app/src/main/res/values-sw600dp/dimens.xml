@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_main_search_list_margin">15dp</dimen>
+    <dimen name="activity_default_elevation">8dp</dimen>
+    <dimen name="dialog_about_view_margin">12dp</dimen>
+    <dimen name="dialog_about_logo_w">225dp</dimen>
+    <dimen name="dialog_about_logo_h">150dp</dimen>
+</resources>

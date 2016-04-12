@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="share_icon_visibility">
+        <item name="android:visible">true</item>
+    </style>
+</resources>

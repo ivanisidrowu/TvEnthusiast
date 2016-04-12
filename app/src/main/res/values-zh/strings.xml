@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">影集狂</string>
+    <string name="favorites">我的劇集</string>
+    <string name="new_episode">今天播出</string>
+    <string name="overview">劇情介紹</string>
+    <string name="sort_by_poularity">熱門劇集</string>
+    <string name="sort_by_rate">好評劇集</string>
+    <string name="result">搜尋結果</string>
+    <string name="search_title">搜尋劇集</string>
+    <string name="season">第%1$d季</string>
+    <string name="seasons">追劇進度</string>
+    <string name="tv_show_added">劇集已經被加入收藏！</string>
+    <string name="tv_show_deleted">劇集已經被移出收藏！</string>
+    <string name="episode">第%1$d集 : %2$s</string>
+    <string name="airing_msg">%1$s S%2$dE%3$d: %4$s</string>
+    <string name="menu_settings">設定</string>
+    <string name="images">劇照</string>
+    <string name="about">關於</string>
+    <string name="setting">設定</string>
+    <string name="genre">類型: %1$s</string>
+    <string name="no_translation">這個劇集介紹還沒有中文翻譯</string>
+    <string name="notification" translatable="false">通知</string>
+    <string name="notify_when_airing" translatable="false">當有新劇集播出時通知我</string>
+</resources>
