@@ -6,6 +6,9 @@ Track TV series! Discover awesome series!
 * Get new episode notifications
 * Save your watching progress
 
+Avaliable on Google Play Store
+https://play.google.com/store/apps/details?id=tw.invictus.tventhusiast
+
 ## Data source
 This APP uses TMDB API.
 https://www.themoviedb.org/documentation/api
