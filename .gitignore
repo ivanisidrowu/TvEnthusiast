@@ -60,3 +60,5 @@ proguard/
 #NDK
 obj/
 jniLibs
+
+fabric.properties
