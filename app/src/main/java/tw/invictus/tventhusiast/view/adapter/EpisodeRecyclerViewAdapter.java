@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import butterknife.Bind;
+import butterknife.BindInt;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 import tw.invictus.tventhusiast.R;
@@ -65,7 +66,8 @@ public class EpisodeRecyclerViewAdapter extends RecyclerView.Adapter<EpisodeRecy
             holder.checkBox.setVisibility(View.GONE);
         }
 
-        holder.cardView.setBackgroundColor(lightColor);
+        holder.cardView.setCardBackgroundColor(lightColor);
+        holder.cardView.setRadius(holder.cardRadius);
     }
 
     @Override
@@ -81,6 +83,8 @@ public class EpisodeRecyclerViewAdapter extends RecyclerView.Adapter<EpisodeRecy
         TextView itemName;
         @Bind(R.id.checkbox)
         CheckBox checkBox;
+        @BindInt(R.integer.fragment_list_card_radius)
+        int cardRadius;
 
         private EpisodeListView listView;
 

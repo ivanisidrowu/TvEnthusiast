@@ -20,6 +20,6 @@
     <string name="setting">設定</string>
     <string name="genre">類型: %1$s</string>
     <string name="no_translation">這個劇集介紹還沒有中文翻譯</string>
-    <string name="notification" translatable="false">通知</string>
-    <string name="notify_when_airing" translatable="false">當有新劇集播出時通知我</string>
+    <string name="notification">通知</string>
+    <string name="notify_when_airing">當有新劇集播出時通知我</string>
 </resources>
