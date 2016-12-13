@@ -157,9 +157,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             case R.id.about:
                 showAboutDialog();
                 break;
-//            case R.id.settings:
-//                startActivity(new Intent(this, SettingsActivity.class));
-//                break;
         }
 
         return super.onOptionsItemSelected(item);
