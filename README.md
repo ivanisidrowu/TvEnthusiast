@@ -62,6 +62,8 @@ EventBus https://github.com/greenrobot/EventBus
 
 Retrolamda https://github.com/evant/gradle-retrolambda
 
+Realm https://realm.io/
+
 ## How to contribute
 
 Any contributions will be appreciated. If you want to contribute to this project, you can send pull request.
