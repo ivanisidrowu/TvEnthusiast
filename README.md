@@ -58,8 +58,6 @@ Glide https://github.com/bumptech/glide
 
 Butterknife https://github.com/JakeWharton/butterknife
 
-EventBus https://github.com/greenrobot/EventBus
-
 Retrolamda https://github.com/evant/gradle-retrolambda
 
 Realm https://realm.io/
