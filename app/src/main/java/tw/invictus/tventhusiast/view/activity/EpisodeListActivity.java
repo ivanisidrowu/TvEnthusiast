@@ -23,6 +23,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
@@ -49,6 +50,8 @@ import tw.invictus.tventhusiast.view.event.GetPaletteEvent;
 import tw.invictus.tventhusiast.view.event.SeasonItemClickEvent;
 
 public class EpisodeListActivity extends AppCompatActivity implements EpisodeListView {
+
+    private static final String TAG = "EpisodeListActivity";
 
     @Inject
     EpisodeListPresenter presenter;
@@ -138,6 +141,7 @@ public class EpisodeListActivity extends AppCompatActivity implements EpisodeLis
 
     @Override
     public void onSeasonLoaded(Season season) {
+        this.season = season;
         recyclerView.setAdapter(new EpisodeRecyclerViewAdapter(this, season, lightColor, isShowInDb));
     }
 
@@ -146,7 +150,7 @@ public class EpisodeListActivity extends AppCompatActivity implements EpisodeLis
         try {
             presenter.updateWatchedEpisode(season.getEpisodes().get(position).getId(), checked);
         } catch (Exception e) {
-
+            Log.e(TAG, "onEpisodeCheckChanged: ", e);
         }
     }
 }

@@ -44,6 +44,7 @@ public class RealmServiceImpl implements RealmService {
     @Override
     public Observable<RealmEpisode> updateWatchedEpisode(long episodeId, boolean isWatched) {
         return Observable.create(subscriber -> {
+            Log.d(TAG, "updateWatchedEpisode: " + Boolean.toString(isWatched));
             Realm realm = Realm.getInstance(context);
             realm.beginTransaction();
             RealmEpisode realmEpisode = realm
