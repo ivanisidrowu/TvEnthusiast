@@ -33,6 +33,16 @@
                 android:fitsSystemWindows="true"
                 app:layout_collapseMode="parallax" />
 
+            <ImageView
+                android:id="@+id/toolbar_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_toolbar_play_btn"
+                android:clickable="true"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax"/>
+
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"

@@ -282,6 +282,13 @@ public class DetailFragment extends Fragment implements DetailView, BitmapPalett
             presenter.addTvShow(show);
         }
     }
+
+    @OnClick(R.id.toolbar_play)
+    public void onToolbarPlayClicked(View view){
+        if(video != null){
+            IntentUtil.viewYoutubeVideo(video.getKey(), this.getContext());
+        }
+    }
     
     private void setActionButton(boolean clickable){
         if (clickable){
