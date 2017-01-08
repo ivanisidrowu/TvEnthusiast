@@ -6,6 +6,7 @@ Track TV series! Discover awesome series!
 * Get new episode notifications
 * Save your watching progress
 
+[Download APK](https://drive.google.com/file/d/0B2rhAFc83w23dDJxVWt4Y1k1QzA/view?usp=sharing)
 ## Data source
 This APP uses TMDB API.
 https://www.themoviedb.org/documentation/api
