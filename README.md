@@ -11,13 +11,13 @@ This APP uses TMDB API.
 https://www.themoviedb.org/documentation/api
 
 ## Screenshots
-<img src="https://github.com/ivanisidrowu/TvEnthusiast/blob/master/screenshots/1.png" width="400" height="712" />
+<img src="https://github.com/ivanisidrowu/TvEnthusiast/blob/master/screenshots/1.png" width="400" height="712" />  <img src="https://github.com/ivanisidrowu/TvEnthusiast/blob/master/screenshots/2.png" width="400" height="712" />
 
-<img src="https://github.com/ivanisidrowu/TvEnthusiast/blob/master/screenshots/2.png" width="400" height="712" />
+<img src="https://github.com/ivanisidrowu/TvEnthusiast/blob/master/screenshots/3.png" width="400" height="712" />  <img src="https://github.com/ivanisidrowu/TvEnthusiast/blob/master/screenshots/4.png" width="400" height="712" />
 
-<img src="https://github.com/ivanisidrowu/TvEnthusiast/blob/master/screenshots/3.png" width="400" height="712" />
+<img src="https://github.com/ivanisidrowu/TvEnthusiast/blob/master/screenshots/5.png" width="600" height="960" />  <img src="https://github.com/ivanisidrowu/TvEnthusiast/blob/master/screenshots/6.png" width="600" height="960" />
 
-<img src="https://github.com/ivanisidrowu/TvEnthusiast/blob/master/screenshots/4.png" width="400" height="712" />
+<img src="https://github.com/ivanisidrowu/TvEnthusiast/blob/master/screenshots/7.png" width="960" height="600" />
 
 ## How to build it
 
