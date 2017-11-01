@@ -1,6 +1,9 @@
-# TvEthusiast
+# TvEthusiast (Deprecated)
 
 Track TV series! Discover awesome series!
+
+!!!THIS REPO IS DEPRECATED, ver.2 with Kotlin comming soon!!!
+
 * Discover awesome series
 
 <img src="https://github.com/ivanisidrowu/TvEnthusiast/blob/master/screenshots/1.png" width="200" height="356" />  <img src="https://github.com/ivanisidrowu/TvEnthusiast/blob/master/screenshots/2.png" width="200" height="356" />
